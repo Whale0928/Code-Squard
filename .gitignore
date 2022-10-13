@@ -31,3 +31,5 @@ bin/
 *.CodeSquad.iml
 !/.idea/
 !/CodeSquad.iml
+/CodeSquad.iml
+/.idea/
