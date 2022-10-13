@@ -31,3 +31,6 @@ bin/
 !/CodeSquad.iml
 /CodeSquad.iml
 /.idea/
+
+#IDE metadata
+**.idea/**
