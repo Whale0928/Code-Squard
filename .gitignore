@@ -27,9 +27,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-/.idea/
 *.CodeSquad.iml
-!/.idea/
 !/CodeSquad.iml
 /CodeSquad.iml
 /.idea/
