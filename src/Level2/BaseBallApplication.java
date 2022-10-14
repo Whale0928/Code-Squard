@@ -1,4 +1,4 @@
-package Level2.controller;
+package Level2;
 
 /**
  * 구현 제약사항
@@ -55,7 +55,8 @@ while (true) {
                 sc = new Scanner(System.in);
                 System.out.print("숫자를 입력해주세요 : ");
                 int temp = sc.nextInt();
-                if (temp > 999) {
+
+                if (String.valueOf(temp).length() != 3) {
                     throw new InputMismatchException();
                 }
 
