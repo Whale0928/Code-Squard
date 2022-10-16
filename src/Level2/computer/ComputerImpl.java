@@ -33,10 +33,13 @@ public class ComputerImpl implements Computer{
     @Override
     public boolean chkResult(Map<String, Integer> map) {
         for(String key : map.keySet()){
-            if(1>map.get(key)) {
-                if(map.get(key).equals("N")){
+
+            if(map.get(key)>=1) {
+                if(key.equals("N")){
                     System.out.println("Nothing");
                     return false;
+                }else if(key.equals("S")&&map.get(key)==3){
+                    return true;
                 }
                 System.out.println(key+" = "+map.get(key));
             }

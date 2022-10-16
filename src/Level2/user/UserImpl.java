@@ -10,8 +10,8 @@ public class UserImpl implements User{
     @Override
     public int[] inputNumbers() throws InputMismatchException {
         Scanner sc = new Scanner(System.in);
+        System.out.print("숫자를 입력해주세요 : ");
         int number = sc.nextInt();
-
         if (String.valueOf(number).length() != 3) {
             throw new InputMismatchException();
         }
