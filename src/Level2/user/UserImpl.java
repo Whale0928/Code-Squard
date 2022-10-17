@@ -11,19 +11,17 @@ public class UserImpl implements User{
     public int[] inputNumbers() throws InputMismatchException {
         Scanner sc = new Scanner(System.in);
         System.out.print("숫자를 입력해주세요 : ");
-        int number = sc.nextInt();
+        String number = sc.nextLine();
         if (String.valueOf(number).length() != 3) {
             throw new InputMismatchException();
         }
-
         return strToArray(number);
     }
 
     //입력받은 수를 int배열로 변환해 반환 하는 메서드
     @Override
-    public int[] strToArray(int n) {
-        String[] arr = String.valueOf(n).split("");
-        int[] iArr= Arrays.stream(arr).mapToInt(Integer::parseInt).toArray();
-        return iArr;
+    public int[] strToArray(String n) {
+        String[] arr = n.split("");
+        return Arrays.stream(arr).mapToInt(Integer::parseInt).toArray();
     }
 }

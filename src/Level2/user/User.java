@@ -11,5 +11,5 @@ public interface User {
     int[] inputNumbers() throws InputMismatchException;
 
     //파라미터로 전달받은 정수를 배열로 반환하는 메서드
-    int[] strToArray(int n);
+    int[] strToArray(String n);
 }

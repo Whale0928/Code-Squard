@@ -1,6 +1,7 @@
 package Level2.computer;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ComputerImpl implements Computer{
 
@@ -18,12 +19,13 @@ public class ComputerImpl implements Computer{
 
     @Override
     public Map<String, Integer> checking(int[] answer, int[] swing) {
+        List<Integer> list = Arrays.stream(answer).boxed().collect(Collectors.toList());
         Map<String,Integer> map =new HashMap<>();
         for(int i=0; i<3; i++){
             if(answer[i] == swing[i]){
-                map.put("S",map.getOrDefault("S",0)+1);
-            }else if(Arrays.asList(answer).contains(swing[i])){
-                map.put("B",map.getOrDefault("B",0)+1);
+                map.put("Strike",map.getOrDefault("Strike",0)+1);
+            }else if(list.contains(swing[i])){
+                map.put("Ball",map.getOrDefault("Ball",0)+1);
             }
         }
         if(map.isEmpty()) map.put("N",1);
@@ -37,13 +39,13 @@ public class ComputerImpl implements Computer{
             if(map.get(key)>=1) {
                 if(key.equals("N")){
                     System.out.println("Nothing");
-                    return false;
-                }else if(key.equals("S")&&map.get(key)==3){
+                }else if(key.equals("Strike")&map.get(key)==3){
+                    System.out.println("Success!!");
                     return true;
                 }
-                System.out.println(key+" = "+map.get(key));
+                System.out.println(key+" :: "+map.get(key));
             }
         }
-        return true;
+        return false;
     }
 }
