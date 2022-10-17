@@ -28,7 +28,7 @@ public class ComputerImpl implements Computer{
                 map.put("Ball",map.getOrDefault("Ball",0)+1);
             }
         }
-        if(map.isEmpty()) map.put("N",1);
+        if(map.isEmpty()) map.put("Nothing",1);
         return map;
     }
 
@@ -37,8 +37,9 @@ public class ComputerImpl implements Computer{
         for(String key : map.keySet()){
 
             if(map.get(key)>=1) {
-                if(key.equals("N")){
+                if(key.equals("Nothing")){
                     System.out.println("Nothing");
+                    return false;
                 }else if(key.equals("Strike")&map.get(key)==3){
                     System.out.println("Success!!");
                     return true;

@@ -12,7 +12,7 @@ public class UserImpl implements User{
         Scanner sc = new Scanner(System.in);
         System.out.print("숫자를 입력해주세요 : ");
         String number = sc.nextLine();
-        if (String.valueOf(number).length() != 3) {
+        if (number.length() != 3) {
             throw new InputMismatchException();
         }
         return strToArray(number);
