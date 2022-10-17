@@ -6,7 +6,6 @@ import Level2.user.User;
 import Level2.user.UserImpl;
 
 import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.Map;
 
 public class SimpleApplication {
@@ -23,7 +22,7 @@ public class SimpleApplication {
                 try {
                     swing = user.inputNumbers();
                     if(swing.length == 3) break;
-                } catch (InputMismatchException e) {
+                } catch (Exception e) {
                     System.out.println("3자리 정수만 입력해주세요");
                 }
             }
