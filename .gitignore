@@ -34,3 +34,4 @@ bin/
 
 #IDE metadata
 **.idea/**
+/Code-Squard.iml
